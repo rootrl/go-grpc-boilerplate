@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package common;
+
+option go_package =  "github.com/rootrl/grpc-hello/protos/common";
+
+message GetGreetingRequest {
+        int32 id = 1;
+}
+
+message GetGreetingResponse {
+        string greeting = 1;
+}
+
+service GreetingService {
+        rpc GetGreeting(GetGreetingRequest) returns (GetGreetingResponse);
+}
